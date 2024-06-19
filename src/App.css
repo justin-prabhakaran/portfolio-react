@@ -178,3 +178,21 @@ body::before {
     font-weight: 700;
     transform: scale(1.25);
 }
+
+.project-content {
+    margin-top: 80px;
+}
+
+
+.project-content .project-heading {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.project-content .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}

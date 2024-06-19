@@ -4,6 +4,9 @@ import "./App.css";
 import { ReactTyped } from "react-typed";
 import LinkedInIcon from "./components/icons/LinkedInIcon";
 import GitHubIcon from "./components/icons/GitHubIcon";
+import ProjectCard from "./components/ProjectCard";
+import RandomChatImg from "./assets/random_chat.jpg"
+import ChatShareImg from "./assets/chat_share.jpg"
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -100,7 +103,7 @@ function App() {
           <div className="icons">
             <div
               className="icon"
-             
+
               onMouseEnter={() => {
                 setCursorVariant("text");
                 // setLinkedIconHovered(true);
@@ -180,6 +183,24 @@ function App() {
             </div>
             <p id="description">{description}</p>
           </div>
+
+          <div
+            className="project-content"
+          >
+
+            <text className="project-heading">
+              Projects
+            </text>
+
+            <div className="cards-container">
+              <ProjectCard title="Random Chat Application" imageSrc={RandomChatImg} />
+
+              <ProjectCard title="Classroom Chat Share Application" imageSrc={ChatShareImg} />
+            </div>
+          </div>
+
+
+
         </div>
 
       </div>

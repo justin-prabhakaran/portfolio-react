@@ -3,7 +3,6 @@
 /* * {
     cursor: none;
 } */
-
 body {
     margin: 0;
     padding: 0;
@@ -25,14 +24,15 @@ body::before {
     background-position: center;
     background-size: cover;
     filter: blur(100px);
-    z-index: -1;
+    z-index: -2;
+
 }
 
-
-
 .content {
-    padding-top: 150px;
-    padding-left: 60px;
+    padding-top: 12vh;
+    padding-left: 6vw;
+    z-index: 1;
+
 }
 
 .intro p {
@@ -42,14 +42,19 @@ body::before {
 
 #hi-intro {
     color: white;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 #name {
-    font-size: 62px;
+    font-size: 68px;
     font-weight: bold;
     color: white;
     display: inline;
+    transition: all 0.2s;
+}
+
+#name:hover {
+    font-size: 75px;
 }
 
 #roles {
@@ -64,12 +69,112 @@ body::before {
 }
 
 .cursor {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     pointer-events: none;
     position: absolute;
-    pointer-events: none;
-    transition:all 100ms linear;
+    mix-blend-mode: difference;
+
+    transition: all 100ms linear;
+    z-index: 9999;
+
+}
+
+.left-icons {
+    position: absolute;
+    bottom: 5vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Ensure icons are above the background */
+}
+
+.left-icons .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+}
+
+.left-icons .icon {
+    color: #607B96;
+    font-size: 23px;
+    padding-bottom: 7px;
+    transition: all 0.2s;
+}
+
+.left-icons .icon:hover {
+    transform: scale(1.4);
+}
+
+.left-icons .line {
+    padding-top: 5px;
+    width: 2px;
+    height: 200px;
+    background-color: #607B96;
+}
+
+.right-icons {
+    position: absolute;
+    bottom: 5vh;
+    right: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.right-icons .email {
+    font-weight: 300;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    color: #607B96;
+    transform: rotate(90deg);
+    transition: all 0.2s;
+}
+
+.right-icons .email:hover {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.right-icons .line {
+    margin-top: 150px;
+    width: 2px;
+    height: 35vh;
+    background-color: #607B96;
+}
+
+.nav-content {
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
+    z-index: 1;
+}
+
+.nav-content .nav-ul {
+    list-style: none;
+    display: flex;
+    color: white;
+}
+
+.nav-ul .nav-li {
+    font-weight: 300;
+
+    padding-left: 30px;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.nav-ul .nav-li:hover {
+    font-weight: 700;
+    transform: scale(1.25);
 }

@@ -7,6 +7,16 @@ import GitHubIcon from "./components/icons/GitHubIcon";
 import ProjectCard from "./components/ProjectCard";
 import RandomChatImg from "./assets/random_chat.jpg"
 import ChatShareImg from "./assets/chat_share.jpg"
+import FlutterTechIcon from "./components/tech-icons/FlutterTechIcon";
+import DartTechIcon from "./components/tech-icons/DartTechIcon";
+import JavaTechIcon from "./components/tech-icons/JavaTechIcon";
+import PythonTechIcon from "./components/tech-icons/PythonTechIcon";
+import CppTechIcon from "./components/tech-icons/CppTechIcon";
+import ClangTechIcon from "./components/tech-icons/ClangTechIcon";
+import TsTechIcon from "./components/tech-icons/TsTechIcon";
+import NodeJsTechIcon from "./components/tech-icons/NodeJsTechIcon";
+import MongoDBTechIcon from "./components/tech-icons/MongoDBTechIcon";
+import MysqlTechIcon from "./components/tech-icons/MysqlTechIcon";
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -19,8 +29,8 @@ function App() {
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePos({
-        x: e.clientX,
-        y: e.clientY,
+        x: e.pageX,
+        y: e.pageY,
       });
     };
 
@@ -193,12 +203,52 @@ function App() {
             </text>
 
             <div className="cards-container">
-              <ProjectCard title="Random Chat Application" imageSrc={RandomChatImg} />
+              <ProjectCard title="Random Chat Application" imageSrc={RandomChatImg} className="card" />
 
-              <ProjectCard title="Classroom Chat Share Application" imageSrc={ChatShareImg} />
+              <ProjectCard title="Classroom Chat Share Application" imageSrc={ChatShareImg} className="card" />
             </div>
           </div>
 
+
+          <div className="tech-content">
+            <text className="tech-heading"
+            >
+              Technologies
+            </text>
+            <div className="tech-container">
+              <div className="tech-icon">
+                <FlutterTechIcon />
+              </div>
+              <div className="tech-icon">
+                <DartTechIcon />
+              </div>
+              <div className="tech-icon">
+                <JavaTechIcon />
+              </div>
+              <div className="tech-icon">
+                <PythonTechIcon />
+              </div>
+              <div className="tech-icon">
+                <CppTechIcon />
+              </div>
+              <div className="tech-icon">
+                <ClangTechIcon />
+              </div>
+              <div className="tech-icon">
+                <TsTechIcon />
+              </div>
+              <div className="tech-icon">
+                <NodeJsTechIcon />
+              </div>
+              <div className="tech-icon">
+                <MongoDBTechIcon />
+              </div>
+              <div className="tech-icon">
+                <MysqlTechIcon />
+              </div>
+
+            </div>
+          </div>
 
 
         </div>

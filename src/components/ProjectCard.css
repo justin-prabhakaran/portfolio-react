@@ -33,6 +33,7 @@
 }
 
 .card-content .heading {
+    padding-left: 15px;
     font-size: 18px;
     color: white;
 }

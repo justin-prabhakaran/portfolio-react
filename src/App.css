@@ -14,7 +14,7 @@ body {
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -91,7 +91,7 @@ body::before {
     align-items: center;
     justify-content: center;
     z-index: 1;
-    /* Ensure icons are above the background */
+
 }
 
 .left-icons .icons {
@@ -109,6 +109,7 @@ body::before {
 }
 
 .left-icons .icon:hover {
+    color: white;
     transform: scale(1.4);
 }
 
@@ -142,8 +143,9 @@ body::before {
 }
 
 .right-icons .email:hover {
+    color: white;
     font-size: 18px;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .right-icons .line {
@@ -193,6 +195,42 @@ body::before {
 .project-content .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 3vw;
+    padding: 4vw;
+
+}
+
+.cards-container .card:hover {
+    transition: all 0.5s;
+}
+
+.cards-container .card:hover {
+    transform: scale(1.05);
+}
+
+.tech-content {
+    padding-top: 50px;
+}
+
+.tech-content .tech-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: white
+}
+
+.tech-content .tech-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-icon {
+    margin: 10px;
+}
+
+.left-icons,
+.right-icons,
+.nav-content {
+    position: fixed;
+    z-index: 1;
 }

@@ -1,9 +1,8 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import { FaLinkedinIn } from "react-icons/fa6";
 
 function LinkedInIcon() {
     return (
-        <i className="fa-brands fa-linkedin-in"></i>
+        <FaLinkedinIn />
     )
 }
 

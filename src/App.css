@@ -12,7 +12,7 @@ body {
     font-family: 'JetBrains Mono', Courier, monospace;
 }
 
-body::before {
+/* body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@ body::before {
     filter: blur(100px);
     z-index: -2;
 
-}
+} */
 
 .content {
     padding-top: 12vh;
@@ -84,7 +84,7 @@ body::before {
 
 .left-icons {
     position: absolute;
-    bottom: 5vh;
+    bottom: 1vh;
     left: 2vw;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ body::before {
 
 .right-icons {
     position: absolute;
-    bottom: 5vh;
+    bottom: 1vh;
     right: 2vw;
     display: flex;
     flex-direction: column;
@@ -209,7 +209,7 @@ body::before {
 }
 
 .tech-content {
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 .tech-content .tech-heading {
@@ -219,6 +219,7 @@ body::before {
 }
 
 .tech-content .tech-container {
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,9 +229,66 @@ body::before {
     margin: 10px;
 }
 
+
+.education-content {
+    margin-top: 40px;
+}
+
+.education-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.education-container {
+    padding-top: 50px;
+}
+
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.year {
+    color: white;
+    width: 25vw;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+    margin-right: 15vw;
+}
+
+.school-content {
+    color: white;
+}
+
+.degree {
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.school {
+    color: rgb(235, 235, 235);
+    padding-top: 10px;
+    display: block;
+}
+
+.location {
+    color: rgb(195, 195, 195);
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+
 .left-icons,
-.right-icons,
-.nav-content {
+.right-icons
+
+/*.nav-content */
+    {
     position: fixed;
     z-index: 1;
 }

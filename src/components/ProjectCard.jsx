@@ -1,6 +1,6 @@
 
 import './ProjectCard.css'
-function ProjectCard({ title, imageSrc }) {
+function ProjectCard({ title, imageSrc, onClick, onMouseEnter,onMouseLeave }) {
     return (
         <div
             className='card'>
@@ -11,7 +11,7 @@ function ProjectCard({ title, imageSrc }) {
                 <text className='heading'>
                     {title}
                 </text>
-                <button className='btn'>view project</button>
+                <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} className='btn'>view project</button>
             </div>
         </div>
     )

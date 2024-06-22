@@ -203,9 +203,22 @@ function App() {
             </text>
 
             <div className="cards-container">
-              <ProjectCard title="Random Chat Application" imageSrc={RandomChatImg} className="card" />
+              <ProjectCard
+                onMouseEnter={() => {
+                  setCursorVariant('text');
+                }}
 
-              <ProjectCard title="Classroom Chat Share Application" imageSrc={ChatShareImg} className="card" />
+                onMouseLeave={() => {
+                  setCursorVariant('default');
+                }} title="Random Chat Application" imageSrc={RandomChatImg} className="card" />
+
+              <ProjectCard onMouseEnter={() => {
+                setCursorVariant('text');
+              }}
+
+                onMouseLeave={() => {
+                  setCursorVariant('default');
+                }} title="Classroom Chat Share Application" imageSrc={ChatShareImg} className="card" />
             </div>
           </div>
 
@@ -249,7 +262,29 @@ function App() {
 
             </div>
           </div>
+          <div className="education-content">
 
+            <text className="education-heading">
+              Educations
+            </text>
+
+            <div className="education-container">
+              {
+                exprience.map((content, index) => (
+                  <div key={index} className="education-item">
+                    <text className="year">{content.year}</text>
+                    <div className="school-content">
+                      <text className="degree">{content.degree}</text>
+                      <text className="school">{content.school}</text>
+                      <text className="location">{content.location}</text>
+                    </div>
+
+                  </div>
+                ))
+              }
+            </div>
+
+          </div>
 
         </div>
 
@@ -261,5 +296,33 @@ function App() {
 const roles = ["Flutter Developer", "Java Developer", "Python Developer", "React Developer", "Cpp Developer", "Dart Developer"];
 const description =
   "I am well-versed in several programming languages and frameworks, including Java, Python, Dart, Flutter, Node.js, C, and C++. With a passion for software development, I enjoy tackling challenges and crafting innovative solutions.";
+
+const exprience = [
+  {
+    year: "2019",
+    degree: "10th Standered",
+    school: "Meadows Hr Sec School",
+    location: "kalaiyarkurichi"
+  },
+  {
+    year: "2010",
+    degree: "10th Standered",
+    school: "Meadows Hr Sec School",
+    location: "kalaiyarkurichi"
+  },
+  {
+    year: "2010",
+    degree: "10th Standered",
+    school: "Meadows Hr Sec School",
+    location: "kalaiyarkurichi"
+  },
+  {
+    year: "2010",
+    degree: "10th Standered",
+    school: "Meadows Hr Sec School",
+    location: "kalaiyarkurichi"
+  },
+
+];
 
 export default App;

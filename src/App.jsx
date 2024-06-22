@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import "./App.css";
 import { ReactTyped } from "react-typed";
 import LinkedInIcon from "./components/icons/LinkedInIcon";
@@ -165,8 +165,15 @@ function App() {
 
         <div className="content">
           <div className="intro">
-            <div id="hi-intro">Hi all. I am</div>
-            <div
+            <motion.div
+              variants={animationVariants(0.5)}
+              initial='hidden'
+              animate='show'
+              id="hi-intro">Hi all. I am</motion.div>
+            <motion.div
+              variants={animationVariants(1)}
+              initial='hidden'
+              animate='show'
               onMouseEnter={
                 () => {
                   setCursorVariant('text');
@@ -178,7 +185,7 @@ function App() {
                 }
               }
               id="name"
-            >JUSTINPRABHAKARAN M</div>
+            >JUSTINPRABHAKARAN M</motion.div>
             <div id="roles">
               <span>{">"}</span>
               <ReactTyped
@@ -191,92 +198,137 @@ function App() {
                 loop
               />
             </div>
-            <p id="description">{description}</p>
-          </div>
-
-          <div
-            className="project-content"
-          >
-
-            <text className="project-heading">
-              Projects
-            </text>
-
-            <div className="cards-container">
-              <ProjectCard
-                onMouseEnter={() => {
-                  setCursorVariant('text');
-                }}
-
-                onMouseLeave={() => {
-                  setCursorVariant('default');
-                }} title="Random Chat Application" imageSrc={RandomChatImg} className="card" />
-
-              <ProjectCard onMouseEnter={() => {
-                setCursorVariant('text');
-              }}
-
-                onMouseLeave={() => {
-                  setCursorVariant('default');
-                }} title="Classroom Chat Share Application" imageSrc={ChatShareImg} className="card" />
-            </div>
+            <motion.p
+              variants={animationVariants(1.5)}
+              initial='hidden'
+              animate='show' id="description">{description}</motion.p>
           </div>
 
 
           <div className="tech-content">
-            <text className="tech-heading"
-            >
-              Technologies
-            </text>
+            <motion.h1
+              initial={{
+                x: -100,
+                opacity: 0
+              }}
+
+              whileInView={{
+                x: 0,
+                opacity: 1
+              }}
+
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="tech-heading">Technologies</motion.h1>
             <div className="tech-container">
-              <div className="tech-icon">
+              <div className="tech-icon flutter-tech-icon">
                 <FlutterTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon dart-tech-icon">
                 <DartTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon java-tech-icon">
                 <JavaTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon python-tech-icon">
                 <PythonTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon cpp-tech-icon">
                 <CppTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon clang-tech-icon">
                 <ClangTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon ts-tech-icon">
                 <TsTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon nodejs-tech-icon">
                 <NodeJsTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon mongodb-tech-icon">
                 <MongoDBTechIcon />
               </div>
-              <div className="tech-icon">
+              <div className="tech-icon mysql-tech-icon">
                 <MysqlTechIcon />
               </div>
-
             </div>
           </div>
+
+
           <div className="education-content">
 
-            <text className="education-heading">
+            <motion.h1
+              initial={{
+                x: -100,
+                opacity: 0
+              }}
+
+              whileInView={{
+                x: 0,
+                opacity: 1
+              }}
+
+              transition={{ duration: 0.5 }}
+              className="education-heading">
               Educations
-            </text>
+            </motion.h1>
 
             <div className="education-container">
               {
                 exprience.map((content, index) => (
                   <div key={index} className="education-item">
-                    <text className="year">{content.year}</text>
+                    <motion.h1
+                      initial={{
+                        x: -100,
+                        opacity: 0
+                      }}
+
+                      whileInView={{
+                        x: 0,
+                        opacity: 1
+                      }}
+
+                      transition={{ duration: 0.5, delay: 0.1 * index }}
+                      className="year">{content.year}
+                    </motion.h1>
                     <div className="school-content">
-                      <text className="degree">{content.degree}</text>
-                      <text className="school">{content.school}</text>
-                      <text className="location">{content.location}</text>
+                      <motion.h1
+                        initial={{
+                          x: 100,
+                          opacity: 0
+                        }}
+
+                        whileInView={{
+                          x: 0,
+                          opacity: 1
+                        }}
+
+                        transition={{ duration: 0.5, delay: 0.1 * index }}
+                        className="degree">{content.degree}</motion.h1>
+                      <motion.h1
+                        initial={{
+                          x: 100,
+                          opacity: 0
+                        }}
+
+                        whileInView={{
+                          x: 0,
+                          opacity: 1
+                        }}
+
+                        transition={{ duration: 0.5, delay: 0.2 * index }}
+                        className="school">{content.school}</motion.h1>
+                      <motion.h1
+                        initial={{
+                          x: 100,
+                          opacity: 0
+                        }}
+
+                        whileInView={{
+                          x: 0,
+                          opacity: 1
+                        }}
+
+                        transition={{ duration: 0.5, delay: 0.3 * index }} className="location">{content.location}</motion.h1>
                     </div>
 
                   </div>
@@ -285,6 +337,61 @@ function App() {
             </div>
 
           </div>
+
+
+          <div
+            className="project-content"
+          >
+
+            <motion.h1
+              whileInView={{
+                opacity: 1,
+                x: 0
+              }}
+              initial={{
+                opacity: 0,
+                x: -100
+              }}
+              transition={{ duration: 0.5 }}
+
+              className="project-heading">
+              Projects
+            </motion.h1>
+
+            <div className="cards-container">
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 100 }}
+                transition={{ delay: 0, duration: 0.5 }}
+
+
+              >
+                <ProjectCard
+                  onMouseLeave={() => setCursorVariant('default')}
+                  onMouseEnter={() => setCursorVariant('text')}
+                  title="Random Chat Application"
+                  imageSrc={RandomChatImg}
+                  className="card"
+                />
+              </motion.div>
+
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 100 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+
+              >
+                <ProjectCard
+                  onMouseEnter={() => setCursorVariant('text')}
+                  onMouseLeave={() => setCursorVariant('default')}
+                  title="Classroom Chat Share Application"
+                  imageSrc={ChatShareImg}
+                  className="card"
+                />
+              </motion.div>
+            </div>
+          </div>
+
 
         </div>
 
@@ -300,29 +407,55 @@ const description =
 const exprience = [
   {
     year: "2019",
-    degree: "10th Standered",
+    degree: "10th Standard",
     school: "Meadows Hr Sec School",
     location: "kalaiyarkurichi"
   },
   {
-    year: "2010",
-    degree: "10th Standered",
+    year: "2021",
+    degree: "12th Standard",
     school: "Meadows Hr Sec School",
     location: "kalaiyarkurichi"
   },
   {
-    year: "2010",
-    degree: "10th Standered",
-    school: "Meadows Hr Sec School",
-    location: "kalaiyarkurichi"
-  },
-  {
-    year: "2010",
-    degree: "10th Standered",
-    school: "Meadows Hr Sec School",
-    location: "kalaiyarkurichi"
+    year: "2021-2025",
+    degree: "Bachelor of Computer Science and Engireering",
+    school: "AAA College of Engineering and Technology",
+    location: "Amathur"
   },
 
 ];
+
+const animationVariants = (delay) => ({
+  hidden: {
+    x: -100,
+    opacity: 0
+  },
+
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5, delay: delay
+    }
+  }
+
+});
+
+
+// const techIconVariants = (duration) => ({
+//   initial: {
+//     y: -10
+//   },
+//   animate: {
+//     y: [10, -10],
+//     transition: {
+//       duration: duration,
+//       ease: 'linear',
+//       repeat: Infinity,
+//       repeatType: 'reverse'
+//     }
+//   }
+// });
 
 export default App;

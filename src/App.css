@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #011627;
+    /* background-color: #000; */
     position: relative;
     height: 100vh;
     font-family: 'JetBrains Mono', Courier, monospace;
@@ -29,7 +30,7 @@ body {
 } */
 
 .content {
-    padding-top: 12vh;
+    padding-top: 18vh;
     padding-left: 6vw;
     z-index: 1;
 
@@ -49,7 +50,7 @@ body {
     font-size: 68px;
     font-weight: bold;
     color: white;
-    display: inline;
+    /* display: inline; */
     transition: all 0.2s;
 }
 
@@ -208,14 +209,15 @@ body {
     transform: scale(1.05);
 }
 
+
 .tech-content {
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .tech-content .tech-heading {
     font-size: 32px;
     font-weight: bold;
-    color: white
+    color: white;
 }
 
 .tech-content .tech-container {
@@ -223,15 +225,73 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    /* Added for wrapping icons in multiple rows */
 }
 
 .tech-icon {
     margin: 10px;
+    animation: float 3s linear infinite;
+}
+
+.flutter-tech-icon {
+    animation-duration: 2.7s;
+}
+
+.dart-tech-icon {
+    animation-duration: 3.1s;
+}
+
+.java-tech-icon {
+    animation-duration: 2.3s;
+}
+
+.python-tech-icon {
+    animation-duration: 3.8s;
+}
+
+.cpp-tech-icon {
+    animation-duration: 1.6s;
+}
+
+.clang-tech-icon {
+    animation-duration: 2.2s;
+}
+
+.ts-tech-icon {
+    animation-duration: 3.9s;
+}
+
+.nodejs-tech-icon {
+    animation-duration: 1.9s;
+}
+
+.mongodb-tech-icon {
+    animation-duration: 3s;
+}
+
+.mysql-tech-icon {
+    animation-duration: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
+
 .education-content {
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .education-heading {
@@ -265,14 +325,15 @@ body {
 
 .degree {
     display: block;
-    color: white;
     font-size: 18px;
     font-weight: 500;
 }
 
 .school {
+    font-size: 18px;
     color: rgb(235, 235, 235);
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    font-weight: normal;
     display: block;
 }
 

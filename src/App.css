@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* * {
+* {
     cursor: none;
-} */
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -50,7 +51,7 @@ body {
     font-size: 68px;
     font-weight: bold;
     color: white;
-    /* display: inline; */
+    display: inline-block;
     transition: all 0.2s;
 }
 
@@ -182,34 +183,6 @@ body {
     transform: scale(1.25);
 }
 
-.project-content {
-    margin-top: 80px;
-}
-
-
-.project-content .project-heading {
-    color: white;
-    font-size: 32px;
-    font-weight: 600;
-}
-
-.project-content .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 3vw;
-    padding: 4vw;
-
-}
-
-.cards-container .card:hover {
-    transition: all 0.5s;
-}
-
-.cards-container .card:hover {
-    transform: scale(1.05);
-}
-
-
 .tech-content {
     margin-top: 150px;
 }
@@ -289,60 +262,6 @@ body {
 }
 
 
-
-.education-content {
-    margin-top: 100px;
-}
-
-.education-heading {
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-}
-
-.education-container {
-    padding-top: 50px;
-}
-
-.education-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 60px;
-}
-
-.year {
-    color: white;
-    width: 25vw;
-    font-size: 18px;
-    font-weight: 500;
-    text-align: right;
-    margin-right: 15vw;
-}
-
-.school-content {
-    color: white;
-}
-
-.degree {
-    display: block;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.school {
-    font-size: 18px;
-    color: rgb(235, 235, 235);
-    /* padding-top: 10px; */
-    font-weight: normal;
-    display: block;
-}
-
-.location {
-    color: rgb(195, 195, 195);
-    font-size: 14px;
-    display: block;
-    margin-top: 5px;
-}
 
 
 .left-icons,

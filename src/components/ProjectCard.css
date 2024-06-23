@@ -44,9 +44,9 @@
     color: white;
     border: none;
     border-radius: 12px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 18px;
-    transition: background-color 0.2s ;
+    transition: background-color 0.2s;
     align-self: center
 }
 

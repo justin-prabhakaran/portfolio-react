@@ -1,0 +1,92 @@
+.tech-content {
+    margin-top: 150px;
+}
+
+.tech-content .tech-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.tech-content .tech-container {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.tech-icon {
+    margin: 10px;
+    animation: float 3s linear infinite;
+}
+
+.flutter-tech-icon {
+    animation-duration: 2.7s;
+}
+
+.dart-tech-icon {
+    animation-duration: 3.1s;
+}
+
+.java-tech-icon {
+    animation-duration: 2.3s;
+}
+
+.python-tech-icon {
+    animation-duration: 3.8s;
+}
+
+.cpp-tech-icon {
+    animation-duration: 1.6s;
+}
+
+.clang-tech-icon {
+    animation-duration: 2.2s;
+}
+
+.ts-tech-icon {
+    animation-duration: 3.9s;
+}
+
+.nodejs-tech-icon {
+    animation-duration: 1.9s;
+}
+
+.mongodb-tech-icon {
+    animation-duration: 3s;
+}
+
+.mysql-tech-icon {
+    animation-duration: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.tech-heading.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tech-container.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}

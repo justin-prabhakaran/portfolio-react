@@ -4,18 +4,10 @@ import "./App.css";
 import { ReactTyped } from "react-typed";
 import LinkedInIcon from "./components/icons/LinkedInIcon";
 import GitHubIcon from "./components/icons/GitHubIcon";
-import FlutterTechIcon from "./components/tech-icons/FlutterTechIcon";
-import DartTechIcon from "./components/tech-icons/DartTechIcon";
-import JavaTechIcon from "./components/tech-icons/JavaTechIcon";
-import PythonTechIcon from "./components/tech-icons/PythonTechIcon";
-import CppTechIcon from "./components/tech-icons/CppTechIcon";
-import ClangTechIcon from "./components/tech-icons/ClangTechIcon";
-import TsTechIcon from "./components/tech-icons/TsTechIcon";
-import NodeJsTechIcon from "./components/tech-icons/NodeJsTechIcon";
-import MongoDBTechIcon from "./components/tech-icons/MongoDBTechIcon";
-import MysqlTechIcon from "./components/tech-icons/MysqlTechIcon";
+
 import ProjectContent from "./components/ProjectContent";
 import EducationContent from "./components/EducationContent";
+import TechContent from "./components/TechContent";
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -204,57 +196,14 @@ function App() {
           </div>
 
 
-          <div className="tech-content">
-            <motion.h1
-              initial={{
-                x: -100,
-                opacity: 0
-              }}
 
-              whileInView={{
-                x: 0,
-                opacity: 1
-              }}
-
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="tech-heading">Technologies</motion.h1>
-            <div className="tech-container">
-              <div className="tech-icon flutter-tech-icon">
-                <FlutterTechIcon />
-              </div>
-              <div className="tech-icon dart-tech-icon">
-                <DartTechIcon />
-              </div>
-              <div className="tech-icon java-tech-icon">
-                <JavaTechIcon />
-              </div>
-              <div className="tech-icon python-tech-icon">
-                <PythonTechIcon />
-              </div>
-              <div className="tech-icon cpp-tech-icon">
-                <CppTechIcon />
-              </div>
-              <div className="tech-icon clang-tech-icon">
-                <ClangTechIcon />
-              </div>
-              <div className="tech-icon ts-tech-icon">
-                <TsTechIcon />
-              </div>
-              <div className="tech-icon nodejs-tech-icon">
-                <NodeJsTechIcon />
-              </div>
-              <div className="tech-icon mongodb-tech-icon">
-                <MongoDBTechIcon />
-              </div>
-              <div className="tech-icon mysql-tech-icon">
-                <MysqlTechIcon />
-              </div>
-            </div>
-          </div>
-
+          <TechContent />
 
 
           <EducationContent />
+
+
+
 
           <ProjectContent onMouseEnter={() => {
             setCursorVariant('text');

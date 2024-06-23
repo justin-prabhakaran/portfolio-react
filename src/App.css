@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-* {
+/* * {
     cursor: none;
-}
+} */
 
 body {
     margin: 0;
     padding: 0;
     background-color: #011627;
-    /* background-color: #000; */
+
     position: relative;
     height: 100vh;
     font-family: 'JetBrains Mono', Courier, monospace;
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -999;
 }
 
 /* body::before {
@@ -33,6 +42,8 @@ body {
 .content {
     padding-top: 18vh;
     padding-left: 6vw;
+    width: 80%;
+    margin: 0 auto;
     z-index: 1;
 
 }
@@ -78,16 +89,21 @@ body {
     pointer-events: none;
     position: absolute;
     mix-blend-mode: difference;
-
-    transition: all 100ms linear;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
     z-index: 9999;
 
+}
+
+.cursor.text {
+    width: 100px;
+    height: 100px;
 }
 
 .left-icons {
     position: absolute;
     bottom: 1vh;
-    left: 2vw;
+    left: 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +141,7 @@ body {
 .right-icons {
     position: absolute;
     bottom: 1vh;
-    right: 2vw;
+    right: 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,7 +175,7 @@ body {
 
 .nav-content {
     position: absolute;
-    top: 2vh;
+    top: 5vh;
     right: 5vw;
     z-index: 1;
 }

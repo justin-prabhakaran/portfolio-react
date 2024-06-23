@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
 import "./App.css";
 import { ReactTyped } from "react-typed";
@@ -8,22 +8,21 @@ import GitHubIcon from "./components/icons/GitHubIcon";
 import ProjectContent from "./components/ProjectContent";
 import EducationContent from "./components/EducationContent";
 import TechContent from "./components/TechContent";
+import ParticleBg from "./components/ParticleBg";
 
 function App() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef(null)
   const [cursorVariant, setCursorVariant] = useState('default');
 
   // const [isLinkedIconHovered, setLinkedIconHovered] = useState(false);
   // const [isGitHubIconHovered, setGitHubIconHovered] = useState(false);
   const [isEmailHovered, setEmailHovered] = useState(false)
-
+  const mouseMove = (e) => {
+    const cursor = cursorRef.current;
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+  };
   useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePos({
-        x: e.pageX,
-        y: e.pageY,
-      });
-    };
 
     window.addEventListener("mousemove", mouseMove);
 
@@ -32,22 +31,9 @@ function App() {
     };
   }, []);
 
-  const variants = {
-    'default': {
-      top: mousePos.y - 15,
-      left: mousePos.x - 15,
-    },
 
-    'text': {
-      height: 100,
-      width: 100,
-      top: mousePos.y - 50,
-      left: mousePos.x - 50
-    }
-
-
-  }
-
+  const handleMouseEnter = () => setCursorVariant('text');
+  const handleMouseLeave = () => setCursorVariant('default');
   return (
     <>
       <div className="App">
@@ -61,40 +47,28 @@ function App() {
         >
 
         </motion.div> */}
-
-        <div className={`cursor ${cursorVariant}`} style={variants[cursorVariant]}></div>
+        <ParticleBg className="particles" />
+        <div ref={cursorRef} className={`cursor ${cursorVariant}`} ></div>
 
         <div className="nav-content">
           <ul className="nav-ul">
             <li className="nav-li"
-              onMouseEnter={() => {
-                setCursorVariant('text');
-              }}
+              onMouseEnter={handleMouseEnter}
 
-              onMouseLeave={() => {
-                setCursorVariant('default')
-              }}
+              onMouseLeave={handleMouseLeave}
 
             >about</li>
             <li className="nav-li"
-              onMouseEnter={() => {
-                setCursorVariant('text');
-              }}
+              onMouseEnter={handleMouseEnter}
 
-              onMouseLeave={() => {
-                setCursorVariant('default')
-              }}
+              onMouseLeave={handleMouseLeave}
             >projects</li>
             <li className="nav-li"
 
 
-              onMouseEnter={() => {
-                setCursorVariant('text');
-              }}
+              onMouseEnter={handleMouseEnter}
 
-              onMouseLeave={() => {
-                setCursorVariant('default')
-              }}>contact</li>
+              onMouseLeave={handleMouseLeave}>contact</li>
           </ul>
         </div>
 
@@ -105,27 +79,15 @@ function App() {
             <div
               className="icon"
 
-              onMouseEnter={() => {
-                setCursorVariant("text");
-                // setLinkedIconHovered(true);
-              }}
-              onMouseLeave={() => {
-                setCursorVariant("default");
-                // setLinkedIconHovered(false);
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <LinkedInIcon />
             </div>
             <div
               className="icon"
-              onMouseEnter={() => {
-                setCursorVariant("text");
-                // setGitHubIconHovered(true);
-              }}
-              onMouseLeave={() => {
-                setCursorVariant("default");
-                // setGitHubIconHovered(false);
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <GitHubIcon />
             </div>
@@ -205,12 +167,8 @@ function App() {
 
 
 
-          <ProjectContent onMouseEnter={() => {
-            setCursorVariant('text');
-          }}
-            onMouseLeave={() => {
-              setCursorVariant('default');
-            }}
+          <ProjectContent onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
 
           />
 

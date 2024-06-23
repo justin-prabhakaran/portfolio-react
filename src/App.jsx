@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import "./App.css";
 import { ReactTyped } from "react-typed";
 import LinkedInIcon from "./components/icons/LinkedInIcon";
 import GitHubIcon from "./components/icons/GitHubIcon";
+
+import ProjectContent from "./components/ProjectContent";
+import EducationContent from "./components/EducationContent";
+import TechContent from "./components/TechContent";
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -16,8 +20,8 @@ function App() {
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePos({
-        x: e.clientX,
-        y: e.clientY,
+        x: e.pageX,
+        y: e.pageY,
       });
     };
 
@@ -100,7 +104,7 @@ function App() {
           <div className="icons">
             <div
               className="icon"
-             
+
               onMouseEnter={() => {
                 setCursorVariant("text");
                 // setLinkedIconHovered(true);
@@ -152,8 +156,15 @@ function App() {
 
         <div className="content">
           <div className="intro">
-            <div id="hi-intro">Hi all. I am</div>
-            <div
+            <motion.div
+              variants={animationVariants(0.5)}
+              initial='hidden'
+              animate='show'
+              id="hi-intro">Hi all. I am</motion.div>
+            <motion.div
+              variants={animationVariants(1)}
+              initial='hidden'
+              animate='show'
               onMouseEnter={
                 () => {
                   setCursorVariant('text');
@@ -165,7 +176,7 @@ function App() {
                 }
               }
               id="name"
-            >JUSTINPRABHAKARAN M</div>
+            >JUSTINPRABHAKARAN M</motion.div>
             <div id="roles">
               <span>{">"}</span>
               <ReactTyped
@@ -178,8 +189,32 @@ function App() {
                 loop
               />
             </div>
-            <p id="description">{description}</p>
+            <motion.p
+              variants={animationVariants(1.5)}
+              initial='hidden'
+              animate='show' id="description">{description}</motion.p>
           </div>
+
+
+
+          <TechContent />
+
+
+          <EducationContent />
+
+
+
+
+          <ProjectContent onMouseEnter={() => {
+            setCursorVariant('text');
+          }}
+            onMouseLeave={() => {
+              setCursorVariant('default');
+            }}
+
+          />
+
+
         </div>
 
       </div>
@@ -190,5 +225,38 @@ function App() {
 const roles = ["Flutter Developer", "Java Developer", "Python Developer", "React Developer", "Cpp Developer", "Dart Developer"];
 const description =
   "I am well-versed in several programming languages and frameworks, including Java, Python, Dart, Flutter, Node.js, C, and C++. With a passion for software development, I enjoy tackling challenges and crafting innovative solutions.";
+
+
+const animationVariants = (delay) => ({
+  hidden: {
+    x: -100,
+    opacity: 0
+  },
+
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5, delay: delay
+    }
+  }
+
+});
+
+
+// const techIconVariants = (duration) => ({
+//   initial: {
+//     y: -10
+//   },
+//   animate: {
+//     y: [10, -10],
+//     transition: {
+//       duration: duration,
+//       ease: 'linear',
+//       repeat: Infinity,
+//       repeatType: 'reverse'
+//     }
+//   }
+// });
 
 export default App;

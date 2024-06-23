@@ -1,9 +1,7 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-
+import { FaGithub } from "react-icons/fa6";
 function GitHubIcon() {
     return (
-        <i className="fa-brands fa-github"></i>
+        <FaGithub />
     )
 }
 

@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* * {
+* {
     cursor: none;
-} */
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #011627;
+    /* background-color: #000; */
     position: relative;
     height: 100vh;
     font-family: 'JetBrains Mono', Courier, monospace;
 }
 
-body::before {
+/* body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -26,10 +28,10 @@ body::before {
     filter: blur(100px);
     z-index: -2;
 
-}
+} */
 
 .content {
-    padding-top: 12vh;
+    padding-top: 18vh;
     padding-left: 6vw;
     z-index: 1;
 
@@ -49,7 +51,7 @@ body::before {
     font-size: 68px;
     font-weight: bold;
     color: white;
-    display: inline;
+    display: inline-block;
     transition: all 0.2s;
 }
 
@@ -84,14 +86,14 @@ body::before {
 
 .left-icons {
     position: absolute;
-    bottom: 5vh;
+    bottom: 1vh;
     left: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1;
-    /* Ensure icons are above the background */
+
 }
 
 .left-icons .icons {
@@ -109,6 +111,7 @@ body::before {
 }
 
 .left-icons .icon:hover {
+    color: white;
     transform: scale(1.4);
 }
 
@@ -121,7 +124,7 @@ body::before {
 
 .right-icons {
     position: absolute;
-    bottom: 5vh;
+    bottom: 1vh;
     right: 2vw;
     display: flex;
     flex-direction: column;
@@ -142,8 +145,9 @@ body::before {
 }
 
 .right-icons .email:hover {
+    color: white;
     font-size: 18px;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .right-icons .line {
@@ -177,4 +181,17 @@ body::before {
 .nav-ul .nav-li:hover {
     font-weight: 700;
     transform: scale(1.25);
+}
+
+
+
+
+
+.left-icons,
+.right-icons
+
+/*.nav-content */
+    {
+    position: fixed;
+    z-index: 1;
 }

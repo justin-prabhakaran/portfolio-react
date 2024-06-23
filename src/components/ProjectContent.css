@@ -1,0 +1,80 @@
+.project-content {
+    margin-top: 80px;
+}
+
+
+.project-heading {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 3vw;
+    padding: 4vw;
+
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s;
+}
+
+
+/* .card:hover {
+    transition: all 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+} */
+
+@keyframes slidIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-heading.in-view {
+    opacity: 1;
+    transform: translate(0);
+    animation: slidIn 0.5s forwards;
+}
+
+.card:nth-child(1) {
+    transition-delay: 0.5s;
+}
+
+.card:nth-child(2) {
+    transition-delay: 2s;
+}
+
+.card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    animation: cardSlideIn 0.5s forwards;
+}

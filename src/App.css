@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* * {
-    cursor: none;
-} */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -82,7 +82,8 @@ body {
 }
 
 .cursor {
-    background-color: white;
+    background-color: transparent;
+    border: white 1px solid;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -90,12 +91,13 @@ body {
     position: absolute;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out, width 0.2s, height 0.2s;
+    transition: transform 0.2s ease-out, width 0.2s, height 0.2s;
     z-index: 9999;
 
 }
 
 .cursor.text {
+    background-color: white;
     width: 100px;
     height: 100px;
 }
@@ -129,12 +131,13 @@ body {
 .left-icons .icon:hover {
     color: white;
     transform: scale(1.4);
+    cursor: pointer;
 }
 
 .left-icons .line {
     padding-top: 5px;
     width: 2px;
-    height: 200px;
+    height: 150px;
     background-color: #607B96;
 }
 
@@ -163,6 +166,7 @@ body {
 .right-icons .email:hover {
     color: white;
     font-size: 18px;
+    cursor: pointer;
     /* font-weight: 700; */
 }
 
@@ -197,6 +201,7 @@ body {
 .nav-ul .nav-li:hover {
     font-weight: 700;
     transform: scale(1.25);
+    cursor: pointer;
 }
 
 

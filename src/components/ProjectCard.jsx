@@ -1,6 +1,9 @@
 
 import './ProjectCard.css'
-function ProjectCard({ title, imageSrc, onClick, onMouseEnter, onMouseLeave }) {
+import propTypes from 'prop-types'
+import GitHubIcon from './icons/GitHubIcon'
+
+function ProjectCard({ title, imageSrc, description, skills, onClick, onMouseEnter, onMouseLeave }) {
     return (
         <div
             className='card'>
@@ -8,14 +11,43 @@ function ProjectCard({ title, imageSrc, onClick, onMouseEnter, onMouseLeave }) {
                 <img src={imageSrc} alt='Random Chat' className='image'></img>
             </div>
             <div className='card-content'>
-                <h1 className='heading'>
-                    {title}
-                </h1>
-                <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} className='btn'>view project</button>
+                <div>
+                    <h1 className='heading'>
+                        {title}
+
+                    </h1>
+                    <p className='description'>{description}</p>
+                </div>
+                <div className="bottom-row">
+                    <div className='skills'>
+                        {
+                            skills.map((skill, index) => (
+                                <img className="skill" key={index} src={skill}></img>
+                            ))
+                        }
+
+                    </div>
+                    <div className="git-icon" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                        <GitHubIcon />
+                    </div>
+                </div>
+                {/* <button onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} className='btn'>view project</button> */}
             </div>
         </div>
     )
 }
+
+ProjectCard.propTypes = {
+    title: propTypes.string.isRequired,
+    imageSrc: propTypes.string.isRequired,
+    description: propTypes.string.isRequired,
+    skills: propTypes.arrayOf(propTypes.string).isRequired,
+    onClick: propTypes.func,
+    onMouseEnter: propTypes.func,
+    onMouseLeave: propTypes.func,
+}
+
+
 
 export default ProjectCard
 

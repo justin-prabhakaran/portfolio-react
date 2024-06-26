@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import "./App.css";
 import { ReactTyped } from "react-typed";
 import LinkedInIcon from "./components/icons/LinkedInIcon";
@@ -10,6 +10,10 @@ import EducationContent from "./components/EducationContent";
 import TechContent from "./components/TechContent";
 import ParticleBg from "./components/ParticleBg";
 
+
+
+import gsap from 'gsap';
+import SplitType from "split-type";
 function App() {
   const cursorRef = useRef(null)
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -31,22 +35,66 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    new SplitType('#description', {
+      type: 'lines'
+    });
+
+    gsap.from('#description .line', {
+      y: '100%',
+      opacity: 1,
+      duration: 0.65,
+      ease: 'back.out',
+      stagger: 0.15,
+
+    })
+
+    new SplitType('#hi-intro', {
+      type: 'lines'
+    });
+
+    gsap.from('#hi-intro .line', {
+      y: '100%',
+      opacity: 1,
+      duration: 0.65,
+      ease: 'back.out',
+      stagger: 0.15,
+
+    })
+
+    new SplitType('#name', {
+      type: 'words'
+    });
+
+    gsap.from('#name .word', {
+      y: '100%',
+      opacity: 1,
+      duration: 0.65,
+      ease: 'power1.out',
+      stagger: 0.15,
+
+    })
+    new SplitType('#name', {
+      type: 'words'
+    });
+
+    gsap.from('#name .word', {
+      y: '100%',
+      opacity: 1,
+      duration: 0.60,
+      ease: 'power1.out',
+      stagger: 0.10,
+
+    })
+
+  }, []);
 
   const handleMouseEnter = () => setCursorVariant('text');
   const handleMouseLeave = () => setCursorVariant('default');
   return (
     <>
       <div className="App">
-        {/* <motion.div
-          className="cursor"
-          variants={variants}
-          animate={cursorVariant}
-          transition={{ ease: "backOut" }
 
-          }
-        >
-
-        </motion.div> */}
         <ParticleBg className="particles" />
         <div ref={cursorRef} className={`cursor ${cursorVariant}`} ></div>
 
@@ -57,18 +105,20 @@ function App() {
 
               onMouseLeave={handleMouseLeave}
 
-            >about</li>
+            >Education</li>
             <li className="nav-li"
               onMouseEnter={handleMouseEnter}
 
               onMouseLeave={handleMouseLeave}
-            >projects</li>
+            >Projects</li>
             <li className="nav-li"
 
 
               onMouseEnter={handleMouseEnter}
 
-              onMouseLeave={handleMouseLeave}>contact</li>
+              onMouseLeave={handleMouseLeave}>
+              Contact</li>
+
           </ul>
         </div>
 
@@ -118,27 +168,20 @@ function App() {
 
         <div className="content">
           <div className="intro">
-            <motion.div
-              variants={animationVariants(0.5)}
-              initial='hidden'
-              animate='show'
-              id="hi-intro">Hi all. I am</motion.div>
-            <motion.div
-              variants={animationVariants(1)}
-              initial='hidden'
-              animate='show'
+            <div
+              // variants={animationVariants(0.5)}
+              // initial='hidden'
+              // animate='show'
+              id="hi-intro">Hi all. I am</div>
+            <div
               onMouseEnter={
-                () => {
-                  setCursorVariant('text');
-                }
+                handleMouseEnter
               }
               onMouseLeave={
-                () => {
-                  setCursorVariant('default');
-                }
+                handleMouseLeave
               }
               id="name"
-            >JUSTINPRABHAKARAN M</motion.div>
+            >JUSTINPRABHAKARAN M</div>
             <div id="roles">
               <span>{">"}</span>
               <ReactTyped
@@ -151,10 +194,7 @@ function App() {
                 loop
               />
             </div>
-            <motion.p
-              variants={animationVariants(1.5)}
-              initial='hidden'
-              animate='show' id="description">{description}</motion.p>
+            <p id="description">{description}</p>
           </div>
 
 
@@ -185,21 +225,22 @@ const description =
   "I am well-versed in several programming languages and frameworks, including Java, Python, Dart, Flutter, Node.js, C, and C++. With a passion for software development, I enjoy tackling challenges and crafting innovative solutions.";
 
 
-const animationVariants = (delay) => ({
-  hidden: {
-    x: -100,
-    opacity: 0
-  },
+// const animationVariants = (delay) => ({
+//   hidden: {
+//     x: -100,
+//     opacity: 0
+//   },
 
-  show: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5, delay: delay
-    }
-  }
+//   show: {
+//     x: 0,
+//     opacity: 1,
+//     transition: {
+//       duration: 0.5, delay: delay
+//     }
+//   }
 
-});
+// });
+
 
 
 // const techIconVariants = (duration) => ({

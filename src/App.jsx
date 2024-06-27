@@ -14,6 +14,7 @@ import ParticleBg from "./components/ParticleBg";
 
 import gsap from 'gsap';
 import SplitType from "split-type";
+import ContactContent from "./components/ContactContent";
 function App() {
   const cursorRef = useRef(null)
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -211,6 +212,8 @@ function App() {
             onMouseLeave={handleMouseLeave}
 
           />
+
+          <ContactContent onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
 
 
         </div>

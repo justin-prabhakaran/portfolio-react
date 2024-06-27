@@ -29,7 +29,7 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         x: 0,
                         opacity: 1,
                     }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.5 }}
                     className="contact-item"
                 >
                     <h6 className="media">e-mail</h6>
@@ -50,7 +50,7 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         x: 0,
                         opacity: 1,
                     }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    transition={{ duration: 0.5 }}
                     className="contact-item"
                 >
                     <h1 className="media">linkedin</h1>
@@ -71,7 +71,7 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         x: 0,
                         opacity: 1,
                     }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    transition={{ duration: 0.5 }}
                     className="contact-item"
                 >
                     <h1 className="media">github</h1>

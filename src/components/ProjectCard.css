@@ -34,7 +34,8 @@
     font-size: 18px;
     color: white;
     margin-bottom: 8px;
-}    /* Adjust this value to reduce space */
+}
+
 
 
 .description {
@@ -60,6 +61,7 @@
 }
 
 .git-icon:hover {
+    cursor: pointer;
     color: white;
     transform: scale(1.4);
 }

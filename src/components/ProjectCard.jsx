@@ -3,7 +3,7 @@ import './ProjectCard.css'
 import propTypes from 'prop-types'
 import GitHubIcon from './icons/GitHubIcon'
 
-function ProjectCard({ title, imageSrc, description, skills, onClick, onMouseEnter, onMouseLeave }) {
+function ProjectCard({ title, imageSrc, description, skills, onMouseEnter, onMouseLeave }) {
     return (
         <div
             className='card'>

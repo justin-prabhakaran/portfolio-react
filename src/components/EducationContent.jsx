@@ -123,7 +123,7 @@ function EducationContent() {
                                 //   }}
 
                                 //   transition={{ duration: 0.5, delay: 0.1 * index }}
-                                className="year">{content.year}
+                                className="year">{content.school}
                             </h1>
                             <div className="school-content">
                                 <h1
@@ -151,7 +151,7 @@ function EducationContent() {
                                     // }}
 
                                     // transition={{ duration: 0.5, delay: 0.2 * index }}
-                                    className="school">{content.school}</h1>
+                                    className="school">{content.year}</h1>
                                 <h1
                                     // initial={{
                                     //   x: 100,

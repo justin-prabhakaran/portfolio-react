@@ -15,6 +15,7 @@ import ParticleBg from "./components/ParticleBg";
 import gsap from 'gsap';
 import SplitType from "split-type";
 import ContactContent from "./components/ContactContent";
+import { Element, Link } from "react-scroll";
 function App() {
   const cursorRef = useRef(null)
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -101,24 +102,20 @@ function App() {
 
         <div className="nav-content">
           <ul className="nav-ul">
-            <li className="nav-li"
+            <Link to="education" offset={-150} className="nav-li"
               onMouseEnter={handleMouseEnter}
-
               onMouseLeave={handleMouseLeave}
 
-            >Education</li>
-            <li className="nav-li"
+            >Education</Link>
+            <Link to="projects" offset={-150} className="nav-li"
               onMouseEnter={handleMouseEnter}
-
               onMouseLeave={handleMouseLeave}
-            >Projects</li>
-            <li className="nav-li"
-
+            >Projects</Link>
+            <Link to="contact" offset={-100} className="nav-li"
 
               onMouseEnter={handleMouseEnter}
-
               onMouseLeave={handleMouseLeave}>
-              Contact</li>
+              Contact</Link>
 
           </ul>
         </div>
@@ -203,17 +200,23 @@ function App() {
           <TechContent />
 
 
-          <EducationContent />
 
 
+          <Element name="education">
+            <EducationContent />
+          </Element>
 
 
-          <ProjectContent onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+          <Element name="projects">
+            <ProjectContent onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
 
-          />
+            />
+          </Element>
 
-          <ContactContent onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+          <Element name="contact">
+            <ContactContent onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+          </Element>
 
 
         </div>

@@ -41,7 +41,7 @@ body {
 } */
 
 .content {
-    padding-top: 18vh;
+    padding-top: 12vh;
     padding-left: 6vw;
     width: 80%;
     margin: 0 auto;
@@ -178,27 +178,66 @@ body {
     background-color: #607B96;
 }
 
-.nav-content {
-    position: absolute;
+/* .nav-content {
+
+    position: sticky;
     top: 5vh;
     right: 5vw;
     z-index: 1;
+    backdrop-filter: blur(10px);
 }
 
-.nav-content .nav-ul {
+.nav-ul {
     list-style: none;
     display: flex;
     color: white;
 }
 
-.nav-ul .nav-li {
+.nav-li {
     font-weight: 300;
     padding-left: 30px;
     font-size: 16px;
     transition: all 0.2s;
 }
 
-.nav-ul .nav-li:hover {
+.nav-li:hover {
+    font-weight: 700;
+    transform: scale(1.25);
+    cursor: pointer;
+} */
+
+
+.nav-content {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #011627;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+}
+
+.nav-ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.nav-li {
+    font-weight: 300;
+    padding-left: 30px;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.nav-li:hover {
     font-weight: 700;
     transform: scale(1.25);
     cursor: pointer;
@@ -206,13 +245,8 @@ body {
 
 
 
-
-
 .left-icons,
-.right-icons
-
-/*.nav-content */
-    {
+.right-icons {
     position: fixed;
     z-index: 1;
 }

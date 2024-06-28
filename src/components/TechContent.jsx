@@ -1,4 +1,3 @@
-
 import FlutterIcon from '../assets/flutter.svg'
 import DartIcon from '../assets/dart.svg'
 import JavaIcon from '../assets/java.svg'
@@ -15,7 +14,7 @@ import VscodeIcon from '../assets/vscode.svg'
 import GitIcon from '../assets/git.svg'
 import SocketIoIcon from '../assets/socketio.svg'
 import UbuntuIcon from '../assets/ubuntu.svg'
-import DocketIcon from '../assets/docker.svg'
+import DockerIcon from '../assets/docker.svg'
 import PostmanIcon from '../assets/postman.svg'
 import FigmaIcon from '../assets/figma.svg'
 import AdobeXd from '../assets/adobexd.svg'
@@ -56,115 +55,43 @@ function TechContent() {
         }
     }, []);
 
+    const generateRandomDuration = () => `${(Math.random() * 5 + 1).toFixed(2)}s`;
+
+    const techIcons = [
+        { imageUrl: FlutterIcon, alt: "flutter" },
+        { imageUrl: DartIcon, alt: "dart" },
+        { imageUrl: JavaIcon, alt: "java" },
+        { imageUrl: PythonIcon, alt: "python" },
+        { imageUrl: CppIcon, alt: "cpp" },
+        { imageUrl: ClangIcon, alt: "clang" },
+        { imageUrl: TsIcon, alt: "ts" },
+        { imageUrl: HtmlIcon, alt: "html" },
+        { imageUrl: CssIcon, alt: "css" },
+        { imageUrl: ReactIcon, alt: "react" },
+        { imageUrl: NodeJsIcon, alt: "nodejs" },
+        { imageUrl: MongoDbIcon, alt: "mongodb" },
+        { imageUrl: MysqlIcon, alt: "mysql" },
+        { imageUrl: VscodeIcon, alt: "vscode" },
+        { imageUrl: GitIcon, alt: "git" },
+        { imageUrl: SocketIoIcon, alt: "socket.io" },
+        { imageUrl: UbuntuIcon, alt: "ubuntu" },
+        { imageUrl: DockerIcon, alt: "docker" },
+        { imageUrl: PostmanIcon, alt: "postman" },
+        { imageUrl: FigmaIcon, alt: "figma" },
+        { imageUrl: AdobeXd, alt: "adobexd" },
+    ];
+
     return (
         <div className="tech-content">
             <h1 className="tech-heading">Technologies</h1>
             <div className="tech-container">
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon flutter-tech-icon">
-                        <TechIcon imageUrl={FlutterIcon} alt="flutter" />
+                {techIcons.map((icon, index) => (
+                    <div key={index} className="tech-icon-wrapper">
+                        <div className="tech-icon" style={{ animationDuration: generateRandomDuration() }}>
+                            <TechIcon imageUrl={icon.imageUrl} alt={icon.alt} />
+                        </div>
                     </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon dart-tech-icon">
-                        <TechIcon imageUrl={DartIcon} alt="dart" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon java-tech-icon">
-                        <TechIcon imageUrl={JavaIcon} alt="java" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon python-tech-icon">
-                        <TechIcon imageUrl={PythonIcon} alt="python" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon cpp-tech-icon">
-                        <TechIcon imageUrl={CppIcon} alt="cpp" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon clang-tech-icon">
-                        <TechIcon imageUrl={ClangIcon} alt="clang" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon ts-tech-icon">
-                        <TechIcon imageUrl={TsIcon} alt="ts" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon html-tech-icon">
-                        <TechIcon imageUrl={HtmlIcon} alt="html" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon css-tech-icon">
-                        <TechIcon imageUrl={CssIcon} alt="css" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon react-tech-icon">
-                        <TechIcon imageUrl={ReactIcon} alt="react" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon nodejs-tech-icon">
-                        <TechIcon imageUrl={NodeJsIcon} alt="nodejs" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon mongodb-tech-icon">
-                        <TechIcon imageUrl={MongoDbIcon} alt="mongodb" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon mysql-tech-icon">
-                        <TechIcon imageUrl={MysqlIcon} alt="mysql" />
-                    </div>
-                </div><div className="tech-icon-wrapper">
-                    <div className="tech-icon vscode-tech-icon">
-                        <TechIcon imageUrl={VscodeIcon} alt="vscode" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon git-tech-icon">
-                        <TechIcon imageUrl={GitIcon} alt="git" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon socketio-tech-icon">
-                        <TechIcon imageUrl={SocketIoIcon} alt="socket.io" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon ubuntu-tech-icon">
-                        <TechIcon imageUrl={UbuntuIcon} alt="ubuntu" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon docker-tech-icon">
-                        <TechIcon imageUrl={DocketIcon} alt="docker" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon postman-tech-icon">
-                        <TechIcon imageUrl={PostmanIcon} alt="postman" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon figma-tech-icon">
-                        <TechIcon imageUrl={FigmaIcon} alt="figma" />
-                    </div>
-                </div>
-                <div className="tech-icon-wrapper">
-                    <div className="tech-icon adobexd-tech-icon">
-                        <TechIcon imageUrl={AdobeXd} alt="adobexd" />
-                    </div>
-                </div>
-
+                ))}
             </div>
         </div>
     );

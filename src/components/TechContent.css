@@ -37,46 +37,6 @@
     transform: scale(1.3);
 }
 
-.flutter-tech-icon {
-    animation-duration: 2.7s;
-}
-
-.dart-tech-icon {
-    animation-duration: 3.1s;
-}
-
-.java-tech-icon {
-    animation-duration: 2.3s;
-}
-
-.python-tech-icon {
-    animation-duration: 3.8s;
-}
-
-.cpp-tech-icon {
-    animation-duration: 1.6s;
-}
-
-.clang-tech-icon {
-    animation-duration: 2.2s;
-}
-
-.ts-tech-icon {
-    animation-duration: 3.9s;
-}
-
-.nodejs-tech-icon {
-    animation-duration: 1.9s;
-}
-
-.mongodb-tech-icon {
-    animation-duration: 3s;
-}
-
-.mysql-tech-icon {
-    animation-duration: 4s;
-}
-
 @keyframes float {
     0% {
         transform: translateY(0);

@@ -40,3 +40,57 @@
     cursor: pointer;
     transform: scale(1.25);
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .contact-heading {
+        font-size: 20px;
+    }
+
+    .media {
+        margin-bottom: -5px;
+        font-size: 12px;
+    }
+
+    .media-address {
+        font-size: 20px;
+    }
+
+    .media-address:hover {
+        transform: scale(1.12);
+    }
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+
+    .media {
+        font-size: 14px;
+    }
+
+    .media-address {
+        font-size: 30px;
+    }
+
+    .media-address:hover {
+        transform: scale(1.12);
+    }
+}
+
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .media-address {
+        font-size: 40px;
+    }
+
+    .media-address:hover {
+        transform: scale(1.25);
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {}

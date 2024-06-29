@@ -7,22 +7,27 @@
     color: white;
     font-size: 32px;
     font-weight: 600;
-    opacity: 0;
+    /* opacity: 0;
     transform: translateX(-100px);
-    transition: all 0.5s;
+    transition: all 0.5s; */
 }
 
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 3vw;
+    gap: 10vw;
     padding: 4vw;
+    /* justify-content: end; */
 
 }
 
 .card {
+    margin: auto;
     height: 100%;
     transition: transform 0.5s;
+    /* opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s opacity 0.5s; */
 }
 
 
@@ -32,7 +37,8 @@
     transform: scale(1.1);
 }
 
-/* @keyframes slidIn {
+/* 
+@keyframes slidIn {
     from {
         opacity: 0;
         transform: translateX(-100px);
@@ -67,3 +73,35 @@
     transform: translateY(0);
     animation: cardSlideIn 0.5s forwards;
 } */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    }
+
+    .project-heading {
+        font-size: 24px;
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {}

@@ -17,7 +17,7 @@ const exprience = [
     },
     {
         year: "2021-2025",
-        degree: "Bachelor of Computer Science and Engireering",
+        degree: "Bachelor of Computer Science and Engineering",
         school: "AAA College of Engineering and Technology",
         location: "Amathur"
     },
@@ -123,7 +123,7 @@ function EducationContent() {
                                 //   }}
 
                                 //   transition={{ duration: 0.5, delay: 0.1 * index }}
-                                className="year">{content.school}
+                                className="degree">{content.degree}
                             </h1>
                             <div className="school-content">
                                 <h1
@@ -138,7 +138,7 @@ function EducationContent() {
                                     // }}
 
                                     // transition={{ duration: 0.5, delay: 0.1 * index }}
-                                    className="degree">{content.degree}</h1>
+                                    className="school">{content.school}</h1>
                                 <h1
                                     // initial={{
                                     //   x: 100,
@@ -151,7 +151,7 @@ function EducationContent() {
                                     // }}
 
                                     // transition={{ duration: 0.5, delay: 0.2 * index }}
-                                    className="school">{content.year}</h1>
+                                    className="year">{content.year}</h1>
                                 <h1
                                     // initial={{
                                     //   x: 100,

@@ -1,5 +1,7 @@
 .education-content {
     margin-top: 100px;
+
+
 }
 
 .education-heading {
@@ -12,7 +14,7 @@
 }
 
 .education-container {
-    padding-top: 50px;
+    padding: 20px
 }
 
 .education-item {
@@ -21,45 +23,46 @@
     margin-bottom: 60px;
 }
 
-.year {
+.degree {
     color: white;
     width: 25vw;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     text-align: right;
     margin-right: 15vw;
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.5s, transform 0.5s;
+    word-break: normal;
+    /* line-break: anywhere; */
 }
 
-.school-content {
+
+.school {
     color: white;
-}
-
-.degree {
     display: block;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
-.school {
-    font-size: 18px;
-    color: rgb(235, 235, 235);
-    /* padding-top: 10px; */
+.year {
+    font-size: 16px;
+    color: white;
     font-weight: normal;
-    display: block;
+    flex-wrap: wrap;
+
 }
 
 .location {
-    color: rgb(195, 195, 195);
-    font-size: 14px;
+    color: white;
+    font-size: 16px;
     display: block;
     margin-top: 5px;
+    font-weight: normal;
 }
 
-.degree,
 .school,
+.year,
 .location {
     opacity: 0;
     transform: translateX(100px);
@@ -72,19 +75,20 @@
     /* animation: slidtoX 0.5s forwards; */
 }
 
-.year.in-view {
+.degree.in-view {
     opacity: 1;
     transform: translateX(0);
     /* animation: slidtoX 0.5s forwards; */
 }
 
 
-.degree.in-view,
 .school.in-view,
+.year.in-view,
 .location.in-view {
     opacity: 1;
     transform: translateX(0);
 }
+
 /* 
 @keyframes slidtoX {
     from {
@@ -97,3 +101,92 @@
         transform: translate(0);
     }
 } */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .education-content {
+        margin-top: 40px;
+    }
+
+    .education-heading {
+        font-size: 24px;
+    }
+
+    .education-container {
+        padding: 10px;
+    }
+
+    .education-item {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .degree,
+    .year,
+    .school,
+    .location {
+        padding-left: 20px;
+        font-size: 16px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: left;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .year,
+    .location {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+
+    .school-content {
+        width: 100%;
+    }
+
+    .degree.in-view,
+    .year.in-view,
+    .school.in-view,
+    .location.in-view {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+    .degree {
+        font-size: 16px;
+        width: 25vw;
+        margin-right: 8vw;
+    }
+
+    .school {
+        font-size: 16px;
+    }
+
+    .year {
+        font-size: 14px;
+    }
+
+    .location {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .degree {
+
+        margin-right: 10vw;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {}

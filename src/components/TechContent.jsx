@@ -21,7 +21,7 @@ import AdobeXd from '../assets/adobexd.svg'
 import TsIcon from '../assets/ts.svg'
 import './TechContent.css';
 import { useEffect } from "react";
-import TechIcon from "./icons/TechIcon";
+// import TechIcon from "./icons/TechIcon";
 
 function TechContent() {
     useEffect(() => {
@@ -88,7 +88,7 @@ function TechContent() {
                 {techIcons.map((icon, index) => (
                     <div key={index} className="tech-icon-wrapper">
                         <div className="tech-icon" style={{ animationDuration: generateRandomDuration() }}>
-                            <TechIcon imageUrl={icon.imageUrl} alt={icon.alt} />
+                            <img src={icon.imageUrl} alt={icon.alt} />
                         </div>
                     </div>
                 ))}

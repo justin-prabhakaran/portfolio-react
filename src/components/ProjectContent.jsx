@@ -14,6 +14,7 @@ import MysqlIcon from '../assets/mysql.svg'
 
 import './ProjectContent.css';
 import { motion } from 'framer-motion'
+// import { useEffect } from 'react';
 
 function ProjectContent({ onMouseEnter, onMouseLeave }) {
 
@@ -33,7 +34,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
     //     if (projectHeading) {
     //         observer.observe(projectHeading);
     //     }
-    //     cards.forEach((card) => {
+    //     cards.forEach((card, index) => {
     //         // card.style.transitionDelay = `${index * 2}s`;
     //         observer.observe(card);
     //     })
@@ -65,7 +66,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                     opacity: 0,
                     x: -100,
                 }}
-                transition={{ duration: 0.2, delay: 0 }}
+                transition={{ duration: 0.2 }}
 
                 className="project-heading">
                 Projects
@@ -73,9 +74,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
 
             <div className="cards-container">
 
-                {/* // whileInView={{ opacity: 1, y: 0 }}
-                // initial={{ opacity: 0, y: 100 }}
-                // transition={{ delay: 0, duration: 1 }} */}
+
 
                 <motion.div
                     whileInView={
@@ -91,7 +90,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                         y: 100,
                     }}
 
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                 >
                     <ProjectCard
                         onMouseLeave={onMouseLeave}
@@ -103,7 +102,11 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                     strangers, featuring random pairing and an
                     intuitive UI. Built with Flutter and Node.js
                     with Socket.IO for responsive interactions.'
-                        skills={[FlutterIcon, NodeJsIcon, SocketIoIcon]} />
+                        skills={[FlutterIcon, NodeJsIcon, SocketIoIcon]}
+                        onClick={() => {
+                            window.open('https://github.com/justin-prabhakaran/random-chat-remote.git', '_blank').focus();
+                        }}
+                    />
                 </motion.div>
 
                 <motion.div
@@ -120,7 +123,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                         y: 100,
                     }}
 
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                 >
                     <ProjectCard
                         onMouseLeave={onMouseLeave}
@@ -132,7 +135,10 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                         description='A classroom app enables seamless chat
                     and file sharing among students. Built with
                     Flutter, Node.js, TypeScript, and MongoDB.'
-                        skills={[FlutterIcon, NodeJsIcon, MongoDbIcon, SocketIoIcon]} />
+                        skills={[FlutterIcon, NodeJsIcon, MongoDbIcon, SocketIoIcon]}
+                        onClick={() => {
+                            window.open('https://github.com/justin-prabhakaran/cse-chat-share.git', '_blank').focus();
+                        }} />
                 </motion.div>
 
 
@@ -150,7 +156,7 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                         y: 100,
                     }}
 
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                 >
                     <ProjectCard
                         onMouseLeave={onMouseLeave}
@@ -161,11 +167,11 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                         description='A Java-based bank management system
                     using MySQL for basic account and
                     transaction management.'
-                        skills={[JavaIcon, MysqlIcon]} />
+                        skills={[JavaIcon, MysqlIcon]}
+                        onClick={() => {
+                            window.open('https://github.com/justin-prabhakaran/Banking-System.git', '_blank').focus();
+                        }} />
                 </motion.div>
-
-
-
                 {/* <ProjectCard
                     onMouseLeave={onMouseLeave}
                     onMouseEnter={onMouseEnter}
@@ -177,9 +183,12 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                     intuitive UI. Built with Flutter and Node.js
                     with Socket.IO for responsive interactions.'
                     skills={[FlutterIcon, NodeJsIcon, SocketIoIcon]}
-                /> */}
+                    onClick={() => {
+                        window.open('https://github.com/justin-prabhakaran/random-chat-remote.git', '_blank').focus();
+                    }}
+                />
 
-                {/* <ProjectCard
+                <ProjectCard
                     onMouseLeave={onMouseLeave}
                     onMouseEnter={onMouseEnter}
                     title="Classroom Chat and File Sharing
@@ -190,7 +199,9 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                     and file sharing among students. Built with
                     Flutter, Node.js, TypeScript, and MongoDB.'
                     skills={[FlutterIcon, NodeJsIcon, MongoDbIcon, SocketIoIcon]}
-                />
+                    onClick={() => {
+                        window.open('https://github.com/justin-prabhakaran/cse-chat-share.git', '_blank').focus();
+                    }} />
                 <ProjectCard
                     onMouseLeave={onMouseLeave}
                     onMouseEnter={onMouseEnter}
@@ -201,18 +212,12 @@ function ProjectContent({ onMouseEnter, onMouseLeave }) {
                     using MySQL for basic account and
                     transaction management.'
                     skills={[JavaIcon, MysqlIcon]}
-                /> */}
-                {/* // whileInView={{ opacity: 1, y: 0 }}
-                // initial={{ opacity: 0, y: 100 }}
-                // transition={{ delay: 0.2, duration: 1 }} */}
+                    onClick={() => {
+                        window.open('https://github.com/justin-prabhakaran/Banking-System.git', '_blank').focus();
+                    }} /> */}
 
-                {/* <ProjectCard
-                    onMouseEnter={onMouseEnter}
-                    onMouseLeave={onMouseLeave}
-                    title="Classroom Chat Share Application"
-                    imageSrc={ChatShareImg}
-                    className='card'
-                /> */}
+
+
 
             </div>
         </div >

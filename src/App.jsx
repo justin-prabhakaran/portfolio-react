@@ -10,10 +10,10 @@ import EducationContent from "./components/EducationContent";
 import TechContent from "./components/TechContent";
 import ParticleBg from "./components/ParticleBg";
 
+import ProgrammerImg from './assets/programmer.png'
+// import gsap from "gsap"
+// import { SplitType } from 'split-type'
 
-
-import gsap from 'gsap';
-import SplitType from "split-type";
 import ContactContent from "./components/ContactContent";
 import { Element, Link } from "react-scroll";
 function App() {
@@ -37,59 +37,59 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    new SplitType('#description', {
-      type: 'lines'
-    });
+  // useEffect(() => {
+  //   new SplitType('#description', {
+  //     type: 'lines'
+  //   });
 
-    gsap.from('#description .line', {
-      y: '100%',
-      opacity: 1,
-      duration: 0.65,
-      ease: 'back.out',
-      stagger: 0.15,
+  //   gsap.from('#description .line', {
+  //     y: '100%',
+  //     opacity: 1,
+  //     duration: 0.65,
+  //     ease: 'back.out',
+  //     stagger: 0.15,
 
-    })
+  //   })
 
-    new SplitType('#hi-intro', {
-      type: 'lines'
-    });
+  //   new SplitType('#hi-intro', {
+  //     type: 'lines'
+  //   });
 
-    gsap.from('#hi-intro .line', {
-      y: '100%',
-      opacity: 1,
-      duration: 0.65,
-      ease: 'back.out',
-      stagger: 0.15,
+  //   gsap.from('#hi-intro .line', {
+  //     y: '100%',
+  //     opacity: 1,
+  //     duration: 0.65,
+  //     ease: 'back.out',
+  //     stagger: 0.15,
 
-    })
+  //   })
 
-    new SplitType('#name', {
-      type: 'words'
-    });
+  //   new SplitType('#name', {
+  //     type: 'words'
+  //   });
 
-    gsap.from('#name .word', {
-      y: '100%',
-      opacity: 1,
-      duration: 0.65,
-      ease: 'power1.out',
-      stagger: 0.15,
+  //   gsap.from('#name .word', {
+  //     y: '100%',
+  //     opacity: 1,
+  //     duration: 0.65,
+  //     ease: 'power1.out',
+  //     stagger: 0.15,
 
-    })
-    new SplitType('#name', {
-      type: 'words'
-    });
+  //   })
+  //   new SplitType('#name', {
+  //     type: 'words'
+  //   });
 
-    gsap.from('#name .word', {
-      y: '100%',
-      opacity: 1,
-      duration: 0.60,
-      ease: 'power1.out',
-      stagger: 0.10,
+  //   gsap.from('#name .word', {
+  //     y: '100%',
+  //     opacity: 1,
+  //     duration: 0.60,
+  //     ease: 'power1.out',
+  //     stagger: 0.10,
 
-    })
+  //   })
 
-  }, []);
+  // }, []);
 
   const handleMouseEnter = () => setCursorVariant('text');
   const handleMouseLeave = () => setCursorVariant('default');
@@ -129,6 +129,9 @@ function App() {
 
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={() => {
+                window.open('https://www.linkedin.com/in/justinprabhakaran-m', '_blank').focus();
+              }}
             >
               <LinkedInIcon />
             </div>
@@ -136,6 +139,9 @@ function App() {
               className="icon"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={() => {
+                window.open('https://github.com/justin-prabhakaran', '_blank').focus();
+              }}
             >
               <GitHubIcon />
             </div>
@@ -153,7 +159,11 @@ function App() {
               setCursorVariant("default");
               setEmailHovered(false);
             }}
+            onClick={() => {
+              window.open('mailto:c.m.justinprabhakaran@gmail.com').focus();
+            }}
           >
+
             c.m.justinprabhakaran@gmail.com
           </div>
           <div className="line" style={
@@ -166,33 +176,38 @@ function App() {
 
         <div className="content">
           <div className="intro">
-            <div
-              // variants={animationVariants(0.5)}
-              // initial='hidden'
-              // animate='show'
-              id="hi-intro">Hi all. I am</div>
-            <div
-              onMouseEnter={
-                handleMouseEnter
-              }
-              onMouseLeave={
-                handleMouseLeave
-              }
-              id="name"
-            >JUSTINPRABHAKARAN M</div>
-            <div id="roles">
-              <span>{">"}</span>
-              <ReactTyped
-
-                strings={
-                  roles
+            <div className="left-intro">
+              <div
+                // variants={animationVariants(0.5)}
+                // initial='hidden'
+                // animate='show'
+                id="hi-intro">Hi all. I am</div>
+              <div
+                onMouseEnter={
+                  handleMouseEnter
                 }
-                typeSpeed={150}
-                backSpeed={100}
-                loop
-              />
+                onMouseLeave={
+                  handleMouseLeave
+                }
+                id="name"
+              >JUSTINPRABHAKARAN M</div>
+              <div id="roles">
+                <span>{">"}</span>
+                <ReactTyped
+
+                  strings={
+                    roles
+                  }
+                  typeSpeed={150}
+                  backSpeed={100}
+                  loop
+                />
+              </div>
+              <p id="description">{description2}</p>
             </div>
-            <p id="description">{description}</p>
+            <div className="right-img">
+              <img src={ProgrammerImg} alt="programmer" />
+            </div>
           </div>
 
 
@@ -230,6 +245,7 @@ const roles = ["Flutter Developer", "Java Developer", "Python Developer", "React
 const description =
   "I am well-versed in several programming languages and frameworks, including Java, Python, Dart, Flutter, Node.js, C, and C++. With a passion for software development, I enjoy tackling challenges and crafting innovative solutions.";
 
+const description2 = "I speak the languages of machines, from Java and Python to Dart and Flutter, with a side of Node.js, C, and C++. I'm a digital alchemist, turning lines of code into gold. I live for the thrill of solving puzzles and building new worlds with software. Whether it's crafting sleek apps or diving into backend wizardry, I'm always up for the challenge. Let's build something awesome together!  💻✨";
 
 // const animationVariants = (delay) => ({
 //   hidden: {

@@ -49,9 +49,33 @@ body {
 
 }
 
-.intro p {
-    color: white;
-    font-size: 18px;
+.intro {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.left-intro {
+    flex: 1;
+    min-width: 0;
+}
+
+.right-img {
+    flex: 0 0 25vw;
+    max-width: 25vw;
+    margin-right: 5vw;
+}
+
+/* .right-img {
+    margin-right: 10vw;
+} */
+
+.right-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 #hi-intro {
@@ -60,10 +84,10 @@ body {
 }
 
 #name {
+    display: block;
     font-size: 68px;
     font-weight: bold;
     color: white;
-    display: inline-block;
     transition: all 0.2s;
 }
 
@@ -78,6 +102,8 @@ body {
 }
 
 #description {
+    font-size: 18;
+    color: white;
     padding-top: 50px;
     width: 450px;
 }
@@ -249,4 +275,139 @@ body {
 .right-icons {
     position: fixed;
     z-index: 1;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .nav-content {
+        display: none;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+    .left-icons {
+        display: none;
+    }
+
+    .right-icons {
+        display: none;
+    }
+
+    .right-img {
+        display: none;
+    }
+
+    .content {
+        margin-top: 60px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .intro {
+        display: block;
+    }
+
+    .right-img img {
+        display: none;
+    }
+
+    #name {
+        display: inline-block;
+        font-size: 28px;
+    }
+
+    #name:hover {
+        font-size: 28px;
+    }
+
+    #hi-intro {
+        color: white;
+        font-size: 12px;
+    }
+
+    #roles {
+
+        font-size: 16px;
+
+    }
+
+    #description {
+        font-size: 12px;
+        width: 320px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+
+
+
+    .intro {
+        display: block;
+    }
+
+    .right-img {
+        display: none;
+    }
+
+    .right-img img {
+        display: none;
+    }
+
+
+
+
+    #name {
+        display: inline-block;
+        font-size: 40px;
+    }
+
+    #name:hover {
+        font-size: 45px;
+    }
+
+    #hi-intro {
+        color: white;
+        font-size: 14px;
+    }
+
+    #roles {
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+    }
+
+    #description {
+        font-size: 16px;
+        color: white;
+        padding-top: 50px;
+        width: 450px;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    #name {
+        font-size: 45px;
+    }
+
+    #name:hover {
+        font-size: 50px;
+    }
+
+
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    #name {
+        font-size: 62px;
+    }
+
+    #name:hover {
+        font-size: 70px;
+    }
 }

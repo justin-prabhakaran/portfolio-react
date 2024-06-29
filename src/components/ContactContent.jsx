@@ -37,6 +37,9 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         className="media-address"
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
+                        onClick={() => {
+                            window.open('mailto:c.m.justinprabhakaran@gmail.com').focus();
+                        }}
                     >
                         c.m.justinprabhakaran@gmail.com
                     </h1>
@@ -58,6 +61,9 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         className="media-address"
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
+                        onClick={() => {
+                            window.open('https://www.linkedin.com/in/justinprabhakaran-m', '_blank').focus();
+                        }}
                     >
                         @justinprabhakaran-m
                     </h1>
@@ -79,6 +85,9 @@ function ContactContent({ onMouseEnter, onMouseLeave }) {
                         className="media-address"
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
+                        onClick={() => {
+                            window.open('https://github.com/justin-prabhakaran', '_blank').focus();
+                        }}
                     >
                         @justin-prabhakaran
                     </h1>

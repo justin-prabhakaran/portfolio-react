@@ -1,8 +1,7 @@
-# React + Vite
+Hi all, this portfolio website is designed to display my work and skills as a software developer. It includes sections for my projects, skills, and a contact form. The application is built with React and styled to provide a professional and intuitive user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Technologies Used
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React: For building the user interface.
+- JavaScript (ES7+): For scripting.
+- HTML & CSS: For structuring and styling the web pages.

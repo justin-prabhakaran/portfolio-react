@@ -15,7 +15,7 @@
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 10vw;
+    gap: 5vw;
     padding: 4vw;
     /* justify-content: end; */
 
@@ -78,11 +78,12 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .cards-container {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 35px;
 
     }
 
     .project-heading {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 

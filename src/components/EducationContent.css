@@ -104,12 +104,12 @@
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .education-content {
-        margin-top: 40px;
+    .education-heading {
+        font-size: 20px;
     }
 
-    .education-heading {
-        font-size: 24px;
+    .education-content {
+        margin-top: 40px;
     }
 
     .education-container {

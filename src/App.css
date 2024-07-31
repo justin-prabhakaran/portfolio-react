@@ -251,6 +251,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin: 0;
     padding: 0;
     color: white;
@@ -268,6 +269,38 @@ body {
     transform: scale(1.25);
     cursor: pointer;
 }
+.btn-resume{
+    border: #607B96 1px solid;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 30px;
+
+    transition: transform 0.2s ease-in;
+}
+
+.btn-resume:hover{
+    transform: scale(1.125);
+}
+
+.btn-resume-intro{
+    border: #607B96 1px solid;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+}
+.btn-resume-intro:hover{
+    transform: scale(1.125);
+    
+}
+
 
 
 
@@ -337,6 +370,13 @@ body {
         font-size: 12px;
         width: 320px;
     }
+    .btn-resume-intro{
+
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 6px;
+        margin: 1px;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -384,6 +424,20 @@ body {
         color: white;
         padding-top: 50px;
         width: 450px;
+    }
+    .btn-resume{
+
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        margin: 1px;
+    }
+    .btn-resume-intro{
+
+        padding: 8px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+        margin: 1px;
     }
 }
 

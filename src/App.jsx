@@ -16,6 +16,9 @@ import ProgrammerImg from './assets/programmer.png'
 
 import ContactContent from "./components/ContactContent";
 import { Element, Link } from "react-scroll";
+
+import pdf from "./assets/justinprabhakaran.pdf"
+
 function App() {
   const cursorRef = useRef(null)
   const [cursorVariant, setCursorVariant] = useState('default');
@@ -93,10 +96,27 @@ function App() {
 
   const handleMouseEnter = () => setCursorVariant('text');
   const handleMouseLeave = () => setCursorVariant('default');
+
+
+  const resumeDownload = () =>{
+      fetch(pdf).then((response) =>{
+        response.blob().then((blob)=>{
+          const url = window.URL.createObjectURL(blob);
+
+          let link = document.createElement('a');
+          link.href = url;
+          link.download = 'justin-prabhakaran.pdf';
+          link.click();
+
+        });
+      });
+
+  }
+
   return (
     <>
       <div className="App">
-
+ 
         <ParticleBg className="particles" />
         <div ref={cursorRef} className={`cursor ${cursorVariant}`} ></div>
 
@@ -116,6 +136,10 @@ function App() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}>
               Contact</Link>
+
+            {/* <a href={pdf} className="btn-resume"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} download>Resume </a> */}
+            <button className="btn-resume" onClick={resumeDownload} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} >Resume </button>
+
 
           </ul>
         </div>
@@ -204,6 +228,8 @@ function App() {
                 />
               </div>
               <p id="description">{description2}</p>
+            <button className="btn-resume-intro" onClick={resumeDownload} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>My Resume</button>
+
             </div>
             <div className="right-img">
               <img src={ProgrammerImg} alt="programmer" />

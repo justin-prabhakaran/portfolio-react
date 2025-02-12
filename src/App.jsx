@@ -105,7 +105,7 @@ function App() {
 
           let link = document.createElement('a');
           link.href = url;
-          link.download = 'justin-prabhakaran.pdf';
+          link.download = 'justinprabhakaran.pdf';
           link.click();
 
         });

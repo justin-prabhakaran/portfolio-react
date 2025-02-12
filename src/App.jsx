@@ -98,20 +98,28 @@ function App() {
   const handleMouseLeave = () => setCursorVariant('default');
 
 
-  const resumeDownload = () =>{
-      fetch(pdf).then((response) =>{
-        response.blob().then((blob)=>{
-          const url = window.URL.createObjectURL(blob);
+  const resumeDownload = async () => {
+    try {
+      const response = await fetch(pdf);
+      if (!response.ok) throw new Error("Failed to fetch PDF");
 
-          let link = document.createElement('a');
-          link.href = url;
-          link.download = 'justinprabhakaran.pdf';
-          link.click();
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
 
-        });
-      });
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-  }
+      // Revoke the object URL to free memory
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (error) {
+      console.error("Download error:", error);
+    }
+  };
+
 
   return (
     <>
